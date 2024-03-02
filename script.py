@@ -1,0 +1,15 @@
+USE csc468;
+
+CREATE TABLE cattle (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    breed VARCHAR(255),
+    age INT,
+    color VARCHAR(255)
+);
+
+LOAD DATA INFILE '/cattle_data.csv'
+INTO TABLE cattle
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
